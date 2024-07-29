@@ -1,15 +1,27 @@
 {
   "languageserver": {
     "erlang": {
-      "command": "/home/mmin/oss/erlang_ls/bin/erlang_ls",
-      "filetypes": ["erlang", "config", "appfile", "appupfile", "appsrcfile", "appupsrcfile", "relupfile", "configsrc"],
+      "command": "/home/mmin/oss/erlang_ls/_build/default/bin/erlang_ls",
+      "filetypes": ["erlang", "appfile", "appupfile", "appsrcfile", "appupsrcfile", "relupfile", "configsrc"],
       "rootPatterns": ["rebar.config"]
     },
     "nix": {
-      "command": "rnix-lsp",
+      "command": "nixd",
       "filetypes": [
         "nix"
       ]
+    },
+    "zig": {
+        "command": "zls",
+        "filetypes": [
+            "zig"
+        ]
+    },
+    "ocaml": {
+        "command": "ocamllsp",
+        "filetypes": [
+            "ocaml"
+        ]
     },
     "ccls": {
         "command": "ccls",

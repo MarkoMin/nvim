@@ -17,13 +17,14 @@ require("lazy").setup({
         tag = '0.1.4',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
+    {'godlygeek/tabular'},
     {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function () 
       local configs = require("nvim-treesitter.configs")
       configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "erlang", "javascript", "html", "make", "haskell", "markdown", "nix" },
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "erlang", "javascript", "typescript", "html", "make", "haskell", "markdown", "nix", "graphql", "zig" },
           sync_install = false,
           highlight = { enable = true },
           indent = { enable = true },  
@@ -34,10 +35,16 @@ require("lazy").setup({
         branch = "release"},
 	{"nvim-tree/nvim-web-devicons"},
     {"nvim-tree/nvim-tree.lua"},
-
-    -- colorscheme
-    --    { "rose-pine/neovim", name = "rose-pine" },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    -- block comments
+    {"tpope/vim-commentary"},
+    
+    -- colorschemes
+    -- { "rose-pine/neovim"},
+    -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    -- {"morhetz/gruvbox"},
+    {"nanotech/jellybeans.vim"},
+    -- {"NLKNguyen/papercolor-theme"},
+    -- {'lifepillar/vim-solarized8'},
 
     -- markdown preview
     -- install without yarn or npm

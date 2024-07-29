@@ -15,9 +15,9 @@ function _G.check_back_space()
     return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
 end
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
-vim.keymap.set("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
-vim.keymap.set("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
-    
+vim.keymap.set("i", "<C-Right>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+vim.keymap.set("i", "<C-Left>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
+vim.keymap.set("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})   
 -- Use sd to show documentation in preview window
 function _G.show_docs()
     local cw = vim.fn.expand('<cword>')
@@ -47,21 +47,9 @@ vim.api.nvim_set_keymap('n', '<C-Down>', 'coc#float#scroll(1,1)', { expr = true,
 -- "Ctrl+y" to copy current word
 vim.api.nvim_set_keymap('n', '<C-y>', 'wbvey', { noremap = true})
 
--- Insert line above
-vim.api.nvim_set_keymap('n', '<C-i>', 'I<CR><Up>', {noremap = true})
--- Append line below
-    vim.api.nvim_set_keymap('n', '<C-a>', 'A<CR>', {noremap = true})
-
 -- Better support for indenting in visual! (gv re-select previous visual)
 vim.api.nvim_set_keymap('v','<Tab>',">gv", {})
 vim.api.nvim_set_keymap('v','<S-Tab>',"<gv", {})
-
--- tab in normal mode
-vim.api.nvim_set_keymap('n', '<TAB>', 'i<Tab><Esc><Right>^', {})
-vim.api.nvim_set_keymap('n', '<S-TAB>', 'i<S-Tab><Esc><Right>^', {})
--- indent current line in normal mode
-vim.api.nvim_set_keymap('n', '<C-TAB>', 'I<Tab><Esc><Right>^', {})
-vim.api.nvim_set_keymap('n', '<C-S-TAB>', 'I<S-Tab><Esc><Right>^', {})
 
 -- enter in normal mode
 vim.api.nvim_set_keymap('n', '<Enter>', 'i<Enter><Esc>', {})
