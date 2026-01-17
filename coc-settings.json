@@ -1,7 +1,7 @@
 {
   "languageserver": {
     "erlang": {
-      "command": "/home/mmin/oss/erlang_ls/_build/default/bin/erlang_ls",
+      "command": "/home/mmin/oss/forks/erlang_ls/_build/default/bin/erlang_ls",
       "filetypes": ["erlang", "appfile", "appupfile", "appsrcfile", "appupsrcfile", "relupfile", "configsrc"],
       "rootPatterns": ["rebar.config"]
     },
@@ -23,6 +23,15 @@
             "ocaml"
         ]
     },
+    "graphql": {
+        "command": "node",
+        "args": ["/home/mmin/node_modules/graphql-language-service-cli/bin/graphql.js", "server", "-m", "stream"],
+        "filetypes": ["graphql"],
+        "settings": {
+            "graphql-config.load.legacy": true
+        },
+        "rootPatterns": ["graphql.config.json"]
+      },
     "ccls": {
         "command": "ccls",
         "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],

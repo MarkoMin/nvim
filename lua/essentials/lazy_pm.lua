@@ -20,29 +20,36 @@ require("lazy").setup({
     {'godlygeek/tabular'},
     {
     "nvim-treesitter/nvim-treesitter",
+    tag = 'v0.9.1',
     build = ":TSUpdate",
     config = function () 
       local configs = require("nvim-treesitter.configs")
       configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "erlang", "javascript", "typescript", "html", "make", "haskell", "markdown", "nix", "graphql", "zig" },
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "erlang", "javascript", "typescript", "html", "make", "haskell", "markdown", "nix", "graphql"},
           sync_install = false,
           highlight = { enable = true },
           indent = { enable = true },  
         })
     end
  },
-    {"neoclide/coc.nvim",
-        branch = "release"},
+    {"neoclide/coc.nvim", branch = "release"},
 	{"nvim-tree/nvim-web-devicons"},
-    {"nvim-tree/nvim-tree.lua"},
+    {"nvim-tree/nvim-tree.lua",
+    tag = 'nvim-tree-v1.1.1'},
     -- block comments
     {"tpope/vim-commentary"},
-    
+
+    -- markdown LSP
+    {"yaegassy/coc-marksman"},
+
     -- colorschemes
     -- { "rose-pine/neovim"},
     -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     -- {"morhetz/gruvbox"},
-    {"nanotech/jellybeans.vim"},
+    -- {"nanotech/jellybeans.vim"},
+    {"WTFox/jellybeans.nvim"},
+    {"dasupradyumna/midnight.nvim"},
+    {"Mofiqul/vscode.nvim"},
     -- {"NLKNguyen/papercolor-theme"},
     -- {'lifepillar/vim-solarized8'},
 
