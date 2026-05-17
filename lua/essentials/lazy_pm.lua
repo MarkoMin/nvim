@@ -20,13 +20,14 @@ require("lazy").setup({
     {'godlygeek/tabular'},
     {
     "nvim-treesitter/nvim-treesitter",
-    tag = 'v0.9.1',
+    -- tag = 'v0.9.1',
+    branch = "master", -- master je kompatibilan sa Neovim v0.11.x
     build = ":TSUpdate",
     config = function () 
       local configs = require("nvim-treesitter.configs")
       configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "erlang", "javascript", "typescript", "html", "make", "haskell", "markdown", "nix", "graphql"},
-          sync_install = false,
+          ensure_installed = { "c", "vim", "vimdoc", "bash", "erlang", "javascript", "typescript", "html", "make", "haskell", "markdown", "nix", "graphql"},
+          sync_install = true,
           highlight = { enable = true },
           indent = { enable = true },  
         })
